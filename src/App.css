@@ -1,3 +1,19 @@
 *{
     margin: 0;
 }
+button:hover{
+    color:wheat  !important;
+    background-color: white  !important;
+ transition: 0.3s; 
+  box-Shadow: 8;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+li:hover{
+    color:wheat  !important;
+    background-color: white  !important;
+ transition: 0.3s; 
+  box-Shadow: 8;
+  transform: translateY(-5px);
+  cursor: pointer;
+}

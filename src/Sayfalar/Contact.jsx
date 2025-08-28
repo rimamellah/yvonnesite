@@ -2,7 +2,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useTranslation } from "react-i18next";
 export default function Contact(){
+   const { t } = useTranslation();
     return(
         <>
             <Box
@@ -12,37 +14,20 @@ export default function Contact(){
            position: "relative",
           bgcolor: 'rgba(0, 0, 0, 0.90)',
           color:"wheat",
-           paddingTop: "200px",
+           paddingTop: "50px",
           textAlign:"center",
         }}
         >
- <Typography variant="h1" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >ALAA&{"\n"}HAMAD</Typography>
-   <Typography variant="h6">modanin ruhunu sekilleniyoruz</Typography>
- <Grid container spacing={2} sx={{margin:"70px 0"}}>
-        <Grid size={{ xs: 12, md: 4 }}>
-            <Typography variant='h6' sx={{color:"gray"}}>Ofis</Typography>
- <Typography variant="h5" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >Tekstilkent Mh.{"\n"}Demokrasi Blv. No: 147/A{"\n"}Şahinbey / GAZİANTEP</Typography>
-            <Typography variant='h6' sx={{color:"gray" ,marginTop:"40px"}}>Telefon(Ofis)</Typography>
-            <Typography variant='h5'>+90 531 000 00 00</Typography>
-        </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
-             <Typography variant='h6' sx={{color:"gray"}}>
-                Fabrika
-            </Typography>
-             <Typography variant="h5" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >Tekstilkent Mh.{"\n"}Demokrasi Blv. No: 147/A{"\n"}Şahinbey / GAZİANTEP</Typography>
-             <Typography variant='h6' sx={{color:"gray" ,marginTop:"40px"}}>Telefon(Ofis)</Typography>
-            <Typography variant='h5'>+90 531 000 00 00</Typography>
-        </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
-             <Typography variant='h6' sx={{color:"gray"}}>
-                Toptan Satış Mağazası
-            </Typography>
-             <Typography variant="h5" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >Tekstilkent Mh.{"\n"}Demokrasi Blv. No: 147/A{"\n"}Şahinbey / GAZİANTEP</Typography>
-     <Typography variant='h6' sx={{color:"gray" ,marginTop:"40px"}}>Telefon(Ofis)</Typography>
-            <Typography variant='h5'>+90 531 000 00 00</Typography>
-        </Grid>
-      </Grid>
-       <Box   sx={{
+<img   src="yvonne.png" width={"400px"} style={{marginTop:"50px"}} alt="" />
+            <Typography variant='h6' sx={{color:"gray"}}>{t("working")}</Typography>
+  <Typography variant="h5" sx={{marginTop:"10px"}} >{t("Monday")}</Typography>
+ <Typography variant="h5" sx={{marginTop:"10px"}} >{t("Tuesday")}</Typography>
+  <Typography variant="h5" sx={{marginTop:"10px"}} >{t("Saturday")}</Typography>
+    <Typography variant="h5" sx={{marginTop:"10px"}} >{t("Closed")}</Typography>
+            <Typography variant='h6' sx={{color:"gray" ,marginTop:"20px"}}>{t("for")}</Typography>
+            <Typography variant='h5' m={"10px 0px"}>+90 533 575 71 41</Typography>
+
+       {/* <Box   sx={{
     backgroundImage: 'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/bina1-scaled.webp")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -61,7 +46,11 @@ export default function Contact(){
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
 
-        </Box>
+        </Box> */}
+    <Typography variant='h4' mt={5}>{t("With")}</Typography>
+        <Typography variant='h6'>{t("Shipping")}</Typography>
+    <Typography variant='h6'>{t("As")}</Typography>
+
         </Box>
        
         </>

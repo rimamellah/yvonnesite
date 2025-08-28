@@ -6,8 +6,19 @@ import Box from '@mui/material/Box';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Grid, ButtonBase } from '@mui/material';
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
+import Footer from '../footer/Footer'
+import { useTranslation } from "react-i18next";
 
+const images = ["foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg","foto6.jpg","foto8.jpg","foto7.jpg","foto9.jpg","foto10.jpg","foto11.jpg","foto12.jpg","foto13.jpg","foto14.jpg","foto15.jpg","foto16.jpg","foto17.jpg","foto18.jpg","foto19.jpg","foto20.jpg","foto21.jpg","foto22.jpg","foto23.jpg","foto24.jpg","foto25.jpg",
+];
 export default function Home() {
+    const { t } = useTranslation();
   const data = [
     { number: "1 Milyon", text: "Yıllık 1 milyon adet triko üretimi" },
     { number: "750 bin", text: "Yıllık 750 bin adet jersey üretimi" },
@@ -27,9 +38,10 @@ export default function Home() {
   };
 
   const sliderImages = [
-    "https://www.mycity.com.tr/wp-content/uploads/2025/04/Banner-21.webp",
-    "https://www.mycity.com.tr/wp-content/uploads/2025/04/Banner-24.webp",
-    "https://www.mycity.com.tr/wp-content/uploads/2025/04/Banner-32.webp",
+    "foto2.jpg",
+    "foto1.jpg",
+    "foto20.jpg",
+    "foto16.jpg"
   ];
 
   return (
@@ -71,10 +83,15 @@ export default function Home() {
                   color: "white",
                 }}
               >
-                <Box sx={{m:"20% 0"}}>
-                    <Typography variant="h1" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >ALAA&{"\n"}HAMAD</Typography>
-   <Typography variant="h6">modanin ruhunu sekilleniyoruz</Typography>  
-                </Box>
+             <Box justifyContent={"center"} mt={"20%"} display={"flex"}>
+                               <img
+        src="yvonne.png"
+        width={"500px"}
+        alt=""
+   
+      /> 
+             </Box>
+        
                
               </Box>
             </Box>
@@ -87,7 +104,7 @@ export default function Home() {
         sx={{
           padding: "10%",
           backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/bina1-scaled.webp")',
+            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto22.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           minHeight: "50vh",
@@ -97,14 +114,91 @@ export default function Home() {
           flexDirection: "column",
         }}
       >
-        <Typography color="gray" variant="h6">MYCITY</Typography>
-        <Typography variant="h5" color="#fbe8d3" sx={{ whiteSpace: "pre-line", textAlign: "center" }}>
-          Bugün, MyCity adıyla faaliyetlerimizi sürdürüyoruz ve{"\n"}
-          tekstil üretiminde kaliteyi ve mükemmeliyeti ön planda{"\n"}
-          tutarak çalışıyoruz. 20.000 m²'lik üretim alanımızda,{"\n"}
-          450’den fazla çalışanımız, 70 örme ve 240’den fazla{"\n"}
-          konfeksiyon makinemizle üretim yapıyoruz.
+        <Typography variant="h2" color="wheat" mb={4}>
+         Vizyon & Misyon & Degerleri 
         </Typography>
+        
+        <Grid container spacing={16}>
+          <Grid size={6}>  <Box
+          sx={{     
+            backgroundColor: "rgba(10, 10, 39, 0.25)",
+            backdropFilter: "blur(4px)",
+            color: "wheat",
+            flexDirection: "column",
+            gap: 2,
+            zIndex: 900,
+            padding: "5%",
+          }}
+        >
+          <Typography variant="h6" color="gray">
+            {t("vision")}
+          </Typography>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("visionp")}</Typography>
+                
+              
+                       <Typography variant="h6" color="gray">
+            {t("Reliability")}
+          </Typography>
+                 <Typography variant="h6" >{t("Reliabilityp")}</Typography>   
+                         <Typography variant="h6" color="gray">
+            {t("Career")}
+          </Typography>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Careerp")}</Typography>  
+                 <div style={{ background: "white", width: "150px", height: "0.5px"}}></div>
+          <Link to="/contact" style={{ textDecoration: "none", color: "wheat" }}>
+            <Typography
+              variant="h6"
+              sx={{
+                display: "inline-flex",
+                alignItems: "center",
+                cursor: "pointer",
+                gap: 1,
+                mt: 2,
+                "&:hover .arrow": { transform: "translateY(-3px)", color: "white" },
+                "&:hover": { color: "white" },
+              }}
+            >
+              iletisim
+              <ArrowForwardIcon
+                className="arrow"
+                sx={{ transition: "transform 0.3s ease" }}
+              />
+            </Typography>
+          </Link> 
+                   
+        </Box>
+        </Grid>
+           <Grid size={6}>  <Box
+          sx={{
+            backgroundColor: "rgba(10, 10, 39, 0.25)",
+            backdropFilter: "blur(4px)",
+            color: "wheat",
+            flexDirection: "column",
+            gap: 2,
+            zIndex: 900,
+            padding: "5%",
+          }}
+        >
+          <Typography variant="h6" color="gray">
+            {t("mission")}
+          </Typography>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("missionp")}</Typography>
+                      <Typography variant="h6" color="gray">
+            {t("Efficiency")}
+          </Typography>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Efficiencyp")}</Typography> 
+               <Typography variant="h6" color="gray">
+            {t("Innovation")}
+          </Typography>
+                 <Typography variant="h6" >{t("Innovationp")}</Typography>  
+        </Box>
+        </Grid>
+         
+
+        </Grid>
+       
+       
+       
         <Box
           sx={{
             width: "100%",
@@ -116,29 +210,78 @@ export default function Home() {
         />
       </Box>
 
+      
+<div className="container" data-aos="fade-up" style={{ padding:"50px" ,backgroundImage:
+            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto20.jpg")',}}>
+
+      <PhotoProvider maskOpacity={0.9}>
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          loop={true}
+          speed={600}
+          autoplay={{ delay: 5000 }}
+          slidesPerView="auto"
+          slidesPerGroup={4}
+          centeredSlides={true}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 0 },
+            768: { slidesPerView: 3, spaceBetween: 20 },
+            1200: { slidesPerView: 5, spaceBetween: 20 },
+          }}
+        >
+          {images.map((src, index) => (
+            <SwiperSlide key={index}>
+              <PhotoView src={src}>
+                <Box
+                 component="img"
+                src={src}
+                 alt={`gallery-${index}`}
+                  sx={{
+                    width: "100%",
+                    height: "400px",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    opacity: 0.9,
+                    transition: "transform 0.3s ease, opacity 0.3s ease",'&:hover': {
+                        transform: 'scale(1.05)',
+                        opacity: 0.5,
+                      },
+                  }}
+                   
+                />
+              </PhotoView>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </PhotoProvider>
+    </div>
       {/* Section 2: Image + Stats */}
       <Box
         sx={{
           padding: "5%",
-          backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/Banner-22.webp")',
+            backgroundImage:
+            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto24.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          
         }}
       >
         <Grid container spacing={2}>
           <Grid item md={6} xs={12}>
             <Box
               component="img"
-              src="/Banner-22.webp"
+              src="foto14.jpg"
               alt="MyCity Building"
               sx={{
                 width: { md: "500px", sm: "100%", xs: "100%" },
                 height: { md: "700px", sm: "auto", xs: "auto" },
                 objectFit: "cover",
+                 borderTopRightRadius:"150px"
               }}
             />
           </Grid>
@@ -190,10 +333,11 @@ export default function Home() {
       <Box
         sx={{
           backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/bina1-scaled.webp")',
+            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto8.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height: '100vh',
+          height: '100%',
+          padding:"60px 0px",
           display: 'flex',
           alignItems: 'center',
         }}
@@ -209,17 +353,20 @@ export default function Home() {
             display: "flex",
             flexDirection: "column",
             gap: 2,
-            zIndex: 1000,
+            zIndex: 900,
             padding: "5%",
           }}
         >
           <Typography variant="h6" color="gray" marginLeft="10%">
-            MYCITY
+            {t("Policy")}
           </Typography>
-          <Typography variant="h5">
-            Müşteri portföyümüz, yerel ve uluslararası pazarda büyümeye devam eden güçlü bir yapıya sahiptir. 45’i yerel, 10’u büyük zincir mağaza olmak üzere toplamda 55 farklı müşteriye hizmet veriyoruz. Ürünlerimizin yaklaşık %30’u, ihracat yapan müşterilerimiz aracılığıyla global pazara ulaşıyor.
-          </Typography>
-          <div style={{ background: "white", width: "150px", height: "0.5px", marginTop: "90px" }}></div>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("ensure")}</Typography>
+                  <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("take")}</Typography>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Benefit")}</Typography>
+
+                 <Typography variant="h6" >{t("reflect")}</Typography>
+
+          <div style={{ background: "white", width: "150px", height: "0.5px", marginTop: "50px" }}></div>
           <Link to="/Skills" style={{ textDecoration: "none", color: "wheat" }}>
             <Typography
               variant="h6"
@@ -242,6 +389,8 @@ export default function Home() {
           </Link>
         </Box>
       </Box>
+<Footer/>
     </Box>
+    
   );
 }

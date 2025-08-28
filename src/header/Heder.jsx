@@ -11,18 +11,24 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import CloseIcon from '@mui/icons-material/Close';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import {  Button, Box } from '@mui/material';
 
 const pages = [
         { name: "ANA SAYFA", link: "/" },
-  { name: "KURUMSAL", link: "/Skills" },
+  { name: "Hakkimizda", link: "/Skills" },
   { name: "ÜRÜN GRUPLARI", link: "/project" },
   { name: "İLETİŞİM", link: "/contact" },
       ];
 
 export default function Header({ darkMode }) {
+   const { i18n } = useTranslation();
+  
+    const changeLang = (lng) => {
+      i18n.changeLanguage(lng);
+    };
   const [openDrawer, setOpenDrawer] = React.useState(false);
-
   const toggleDrawer = (open) => (event) => {
     if (
       event.type === 'keydown' &&
@@ -37,7 +43,7 @@ export default function Header({ darkMode }) {
     <>
    
 <AppBar
-  position="absolute"
+  position="fixed"
   sx={{
     backgroundColor: "rgba(1, 7, 39, 0.15)", // شفاف
     backdropFilter: "blur(4px)",
@@ -47,14 +53,30 @@ export default function Header({ darkMode }) {
 >
   <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
     {/* شعار الموقع */}
-    <Typography variant="h6" sx={{ textDecoration: "none" }}>
+ 
       <img
-        src="https://www.mycity.com.tr/wp-content/uploads/2025/04/mycityWeb21.webp#73"
+        src="yvonne.png"
         width={"150px"}
         alt=""
-        style={{ filter: "brightness(0) invert(1)" }} // تحويل الشعار ليكون أبيض
+   
       />
-    </Typography>
+
+      <Box display="flex" gap={2}> 
+         <Button
+        variant={i18n.language === "tr" ? "contained" : "outlined"}
+        onClick={() => changeLang("tr")}color='inherit'
+        style={{}}
+      >
+        TR
+      </Button>
+
+      <Button
+        variant={i18n.language === "en" ? "contained" : "outlined"}
+        onClick={() => changeLang("en")} color='inherit'
+      >
+        EN
+      </Button>
+        </Box>
 
     {/* زر القائمة للهواتف */}
     <IconButton
@@ -71,6 +93,7 @@ export default function Header({ darkMode }) {
     {/* القائمة للكمبيوتر */}
     <Toolbar sx={{ display: { xs: "none", md: "flex" } }}>
       {pages.map((page) => (
+         
         <Typography
           key={page.name}
           component={Link}
@@ -91,8 +114,15 @@ export default function Header({ darkMode }) {
     </Toolbar>
 
     {/* أيقونة واتساب بلون أبيض */}
-    <WhatsAppIcon fontSize="medium" sx={{ color: "white" }} />
-  </Toolbar>
+<IconButton
+      component="a"
+      href="https://wa.me/905335757141" // استبدل بالرقم تبعك
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{ color: "white" }}
+    >
+      <WhatsAppIcon fontSize="medium" />
+    </IconButton>  </Toolbar>
 </AppBar>
       {/* Drawer الجانبي */}
       <Drawer
@@ -125,6 +155,7 @@ export default function Header({ darkMode }) {
   </IconButton>
 
   {/* القائمة في منتصف الدرج */}
+
   <List sx={{ width: "100%" }}>
     {pages.map((page) => (
       <ListItem key={page.name} disablePadding sx={{ justifyContent: "center" }}>
