@@ -15,16 +15,15 @@ import { Link, } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import {  Button, Box } from '@mui/material';
 
-const pages = [
-        { name: "ANA SAYFA", link: "/" },
-  { name: "Hakkimizda", link: "/Skills" },
-  { name: "ÜRÜN GRUPLARI", link: "/project" },
-  { name: "İLETİŞİM", link: "/contact" },
-      ];
 
 export default function Header({ darkMode }) {
-   const { i18n } = useTranslation();
-  
+  const { t ,i18n} = useTranslation();
+const pages = [
+  { name: t("pages.home"), link: "/" },
+  { name: t("pages.about"), link: "/Skills" },
+  { name: t("pages.projects"), link: "/project" },
+  { name: t("pages.contact"), link: "/contact" },
+];
     const changeLang = (lng) => {
       i18n.changeLanguage(lng);
     };

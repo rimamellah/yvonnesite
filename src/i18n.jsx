@@ -45,7 +45,16 @@ Closed :"Pazar Kapalı",
 With :"Doğru ve hızlı kargo güvencesi ile",
 Shipping :"Kargo ve Teslimat Politikamız",
 As:"Yvonne Fae olarak dünyanın dört bir yanına ürün gönderimi yapıyoruz. İlgili ürünlerin doğru ve hızlı şekilde teslim edilmesi öncelikli politikamızdır.Ürünler, sipariş sırasına göre hazırlanarak kargolanmaktadır",
-
+    home: "ANA SAYFA",
+    about: "Hakkimizda",
+    projects: "ÜRÜN GRUPLARI",
+    contact: "İLETİŞİM",
+      pages: {
+    "home": "ANA SAYFA",
+    "about": "Hakkimizda",
+    "projects": "ÜRÜN GRUPLARI",
+    "contact": "İLETİŞİM"
+  }
     },
     },
     en: {
@@ -88,7 +97,12 @@ Closed :"Closed on Sunday",
 With :"With Accurate and Fast Shipping Assurance",
 Shipping :"Our Shipping and Delivery Policy",
 As:"As Yvonne Fae, we ship products all over the world. Our primary policy is to deliver the relevant products accurately and quickly.The products are prepared and shipped according to the order of the order.",
-
+  pages: {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "projects": "PROJECT GROUPS",
+    "contact": "CONTACT"
+  }
 
 
     }

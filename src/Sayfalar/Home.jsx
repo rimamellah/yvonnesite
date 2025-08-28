@@ -83,9 +83,12 @@ export default function Home() {
                   color: "white",
                 }}
               >
-                <Box sx={{m:"20% 0"}}>
-                    <Typography variant="h1" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >ALAA&{"\n"}HAMAD</Typography>
-   <Typography variant="h6">modanin ruhunu sekilleniyoruz</Typography>  
+                <Box sx={{m:"20% 0"}} justifyContent={"center"} display={"flex"}>
+                 <img
+        src="yvonne.png"
+        width={"300px"}
+        alt=""
+      />
                 </Box>
                
               </Box>

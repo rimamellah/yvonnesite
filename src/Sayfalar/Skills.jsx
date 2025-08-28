@@ -41,7 +41,7 @@ export default  function Skills(){
               </Box>
    <Box textAlign={"left"} paddingLeft={"25%"} marginTop={"6%"}>
      <Typography variant='body2' color='gray'>
-MYCITY</Typography>
+Yvonne</Typography>
           <Typography variant='h4'>{t("AboutUs")}</Typography>
    
    </Box>
