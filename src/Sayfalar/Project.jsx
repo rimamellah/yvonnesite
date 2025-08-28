@@ -24,7 +24,7 @@ function Projet() {
       }}
     >
        
-             <Box m={"0px 5%"}>
+             <Box m={"0px 2%"}>
                                <img
         src="yvonne.png"
         width={"200px"}

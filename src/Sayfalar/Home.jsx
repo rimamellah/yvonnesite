@@ -83,15 +83,10 @@ export default function Home() {
                   color: "white",
                 }}
               >
-             <Box justifyContent={"center"} mt={"20%"} display={"flex"}>
-                               <img
-        src="yvonne.png"
-        width={"500px"}
-        alt=""
-   
-      /> 
-             </Box>
-        
+                <Box sx={{m:"20% 0"}}>
+                    <Typography variant="h1" sx={{marginTop:"20px",whiteSpace: "pre-line",}} >ALAA&{"\n"}HAMAD</Typography>
+   <Typography variant="h6">modanin ruhunu sekilleniyoruz</Typography>  
+                </Box>
                
               </Box>
             </Box>
@@ -114,7 +109,7 @@ export default function Home() {
           flexDirection: "column",
         }}
       >
-        <Typography variant="h2" color="wheat" mb={4}>
+        <Typography variant="h2" color="white" mb={4}>
          Vizyon & Misyon & Degerleri 
         </Typography>
         
@@ -135,17 +130,16 @@ export default function Home() {
           </Typography>
                  <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("visionp")}</Typography>
                 
-              
                        <Typography variant="h6" color="gray">
             {t("Reliability")}
           </Typography>
                  <Typography variant="h6" >{t("Reliabilityp")}</Typography>   
-                         <Typography variant="h6" color="gray">
+                        <Typography variant="h6" color="gray">
             {t("Career")}
           </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Careerp")}</Typography>  
-                 <div style={{ background: "white", width: "150px", height: "0.5px"}}></div>
-          <Link to="/contact" style={{ textDecoration: "none", color: "wheat" }}>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Careerp")}</Typography>
+                 <div style={{ background: "white", width: "150px", height: "0.5px", marginTop: "20px" }}></div>
+          <Link to="/Skills" style={{ textDecoration: "none", color: "wheat" }}>
             <Typography
               variant="h6"
               sx={{
@@ -164,8 +158,7 @@ export default function Home() {
                 sx={{ transition: "transform 0.3s ease" }}
               />
             </Typography>
-          </Link> 
-                   
+          </Link>     
         </Box>
         </Grid>
            <Grid size={6}>  <Box
@@ -183,14 +176,14 @@ export default function Home() {
             {t("mission")}
           </Typography>
                  <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("missionp")}</Typography>
-                      <Typography variant="h6" color="gray">
-            {t("Efficiency")}
-          </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Efficiencyp")}</Typography> 
                <Typography variant="h6" color="gray">
             {t("Innovation")}
           </Typography>
                  <Typography variant="h6" >{t("Innovationp")}</Typography>  
+                        <Typography variant="h6" color="gray">
+            {t("Efficiency")}
+          </Typography>
+                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Efficiencyp")}</Typography> 
         </Box>
         </Grid>
          

@@ -15,7 +15,7 @@ export default  function Skills(){
     color: "wheat",
     textAlign: "center",
     flexGrow: 1, backgroundImage:
-   'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto2.jpg")',
+   'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/yvonnesite/foto2.jpg")',
    backgroundSize:"cover",    
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center", 
