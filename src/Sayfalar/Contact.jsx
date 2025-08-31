@@ -107,7 +107,7 @@ export default function Contact(){
 
   <hr style={{ border: "none", borderTop: "1px solid gray" ,marginTop:"20px"}} />
       <Typography variant="h6"  align="center" color='gray' mt={2}>
-        &copy; 2025 Yvonne Fae Markası Tüm Hakları AEP Mühendislik Tekstil Enerji İnşaat San.Tic.Ltd.Şti. 'ne aittir.
+        &copy; 2025 Yvonne Fae Markası Tüm Hakları AEP Mühendislik Tekstil Enerji İnşaat San.Tic.Ltd.Şti.'ne aittir.
       </Typography>
         </Box>
        
