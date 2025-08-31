@@ -45,16 +45,43 @@ Closed :"Pazar Kapalı",
 With :"Doğru ve hızlı kargo güvencesi ile",
 Shipping :"Kargo ve Teslimat Politikamız",
 As:"Yvonne Fae olarak dünyanın dört bir yanına ürün gönderimi yapıyoruz. İlgili ürünlerin doğru ve hızlı şekilde teslim edilmesi öncelikli politikamızdır.Ürünler, sipariş sırasına göre hazırlanarak kargolanmaktadır",
-    home: "ANA SAYFA",
-    about: "Hakkimizda",
-    projects: "ÜRÜN GRUPLARI",
-    contact: "İLETİŞİM",
+  vsms:"Vizyon & Misyon", 
       pages: {
     "home": "ANA SAYFA",
-    "about": "Hakkimizda",
+    "about": "HAKKIMIZDA",
     "projects": "ÜRÜN GRUPLARI",
     "contact": "İLETİŞİM"
-  }
+  },
+  about:"hakımızda",
+  contact:"iletişim",
+production: {
+    "item1": {
+      "number": "2000 m2",
+      "text": "2000 metrekare üretim alanı"
+    },
+    "item2": {
+      "number": "500 kutu",
+      "text": "Yıllık 500 bin Denim üretimi"
+    },
+    "item3": {
+      "number": "500 kutu",
+      "text": "Yıllık 500 bin dokuma örme"
+    },
+    "item4": {
+      "number": "48",
+      "text": "Ülkeye ihracat yapıyoruz."
+    }
+  
+},
+ofis:"Ofis",
+fabrika:"Fabrika",
+magaza:"Toptan Satış Mağazası",
+ile:"İletişim",
+arap:"Toptan Satış Arapça : ",
+tur:"Toptan Satış Türkçe : ",
+ing:"Toptan Satış İngilizce : ",
+rus:"Toptan Satış Rusça : ",
+fabof:"Fabrika & Ofis : ",
     },
     },
     en: {
@@ -97,12 +124,46 @@ Closed :"Closed on Sunday",
 With :"With Accurate and Fast Shipping Assurance",
 Shipping :"Our Shipping and Delivery Policy",
 As:"As Yvonne Fae, we ship products all over the world. Our primary policy is to deliver the relevant products accurately and quickly.The products are prepared and shipped according to the order of the order.",
-  pages: {
+  vsms:"Vision & Mission", 
+pages: {
     "home": "HOME",
     "about": "ABOUT US",
     "projects": "PROJECT GROUPS",
     "contact": "CONTACT"
-  }
+  },
+  about:"about us",
+    contact:"contact",
+production: {
+    "item1": {
+      "number": "2000 m2",
+      "text": "2000 square meters of production area"
+    },
+    "item2": {
+      "number": "500 thousand",
+      "text": "Annual denim production of 500 thousand"
+    },
+    "item3": {
+      "number": "500 thousand",
+      "text": "500 thousand woven and knitted items per year"
+    },
+    "item4": {
+      "number": "48",
+      "text": "We export to the country"
+    }
+  
+},
+ofis:"Office",
+fabrika:"Factory",
+magaza:"Wholesale Store",
+ile:"Communication",
+arap:"Wholesale Arabic : ",
+tur:"Wholesale Turkish : ",
+ing:"Wholesale English : ",
+rus:"Wholesale Russian : ",
+fabof:"Factory & Office : ",
+
+
+
 
 
     }

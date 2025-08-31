@@ -19,11 +19,15 @@ const images = ["foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg","fot
 ];
 export default function Home() {
     const { t } = useTranslation();
+
   const data = [
-    { number: "1 Milyon", text: "Yıllık 1 milyon adet triko üretimi" },
-    { number: "750 bin", text: "Yıllık 750 bin adet jersey üretimi" },
-    { number: "750 bin", text: "Yıllık 750 bin adet dokuma giyim ürünü üretiyoruz." },
+    { number: t("production.item1.number"), text: t("production.item1.text") },
+    { number: t("production.item2.number"), text: t("production.item2.text") },
+    { number: t("production.item3.number"), text: t("production.item3.text") },
+    { number: t("production.item4.number"), text: t("production.item4.text") },
   ];
+
+ 
 
   const settings = {
     dots: true,
@@ -39,354 +43,338 @@ export default function Home() {
 
   const sliderImages = [
     "foto2.jpg",
-    "foto1.jpg",
     "foto20.jpg",
     "foto16.jpg"
   ];
 
-  return (
-    <Box>
-      {/* Hero Carousel */}
-      <Box sx={{ "& .slick-dots li button:before": { color: "white" } }}>
-        <Slider {...settings}>
-          {sliderImages.map((url, index) => (
+return (
+  <Box sx={{}}>
+    {/* Hero Carousel */}
+    <Box sx={{}}>
+          
+              <Slider {...settings}>
+        {sliderImages.map((url, index) => (
+          <Box
+            key={index}
+            sx={{
+              height: { xs: "50vh", sm: "70vh", md: "100vh" }, // مرن مع حجم الشاشة
+              backgroundImage: `url(${url})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+            }}
+          />
+         
+        ))}
+       
+      </Slider>
+        
+      
+    </Box>
+    {/* Section 1 */}
+    <Box
+      sx={{
+        padding: { xs: "5%", md: "10%" },
+        backgroundImage:
+          'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto22.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: { xs: "60vh", md: "50vh" },
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        
+      }}
+    >
+      <Typography variant="h3" color="white" mb={2} textAlign="center">
+         {t("vsms")}
+      </Typography>
+
+      <Grid container spacing={4} mt={2}>
+        <Grid item size={6}>
+          <Box
+            sx={{
+              backgroundColor: "rgba(10, 10, 39, 0.25)",
+              backdropFilter: "blur(4px)",
+              color: "wheat",
+              flexDirection: "column",
+              gap: 2,
+              padding: { xs: "5%", md: "10%" },
+            }}
+          >
+            <Typography variant="h6" color="gray">
+              {t("vision")}
+            </Typography>
+            <Typography variant="body1" mb={2}>
+              {t("visionp")}
+            </Typography>
+
+            <Typography variant="h6" color="gray">
+              {t("Reliability")}
+            </Typography>
+            <Typography variant="body1" mb={2}>
+              {t("Reliabilityp")}
+            </Typography>
+
+            <Typography variant="h6" color="gray">
+              {t("Career")}
+            </Typography>
+            <Typography variant="body1">{t("Careerp")}</Typography>
+
             <Box
-              key={index}
               sx={{
-                width: "100vw",
-                height: "100vh",
-                backgroundImage: `url(${url})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                background: "white",
+                width: "150px",
+                height: "0.5px",
+                mt: 3,
               }}
-            >
-              {/* Optional Text Overlay */}
-              <Box
+            />
+            <Link to="/Skills" style={{ textDecoration: "none", color: "wheat" }}>
+              <Typography
+                variant="h6"
                 sx={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "rgba(0, 0, 0, 0.4)",
-                }}
-              />
-              <Box
-                sx={{
-                  position: "relative",
-                  zIndex: 2,
-                  textAlign: "center",
-                  color: "white",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  gap: 1,
+                  mt: 2,
+                  "&:hover .arrow": { transform: "translateY(-3px)", color: "white" },
+                  "&:hover": { color: "white" },
                 }}
               >
-                <Box sx={{m:"20% 0"}} justifyContent={"center"} display={"flex"}>
-                 <img
-        src="yvonne.png"
-        width={"300px"}
-        alt=""
-      />
-                </Box>
-               
-              </Box>
-            </Box>
-          ))}
-        </Slider>
-      </Box>
+                  {t("about")}
+                <ArrowForwardIcon
+                  className="arrow"
+                  sx={{ transition: "transform 0.3s ease" }}
+                />
+              </Typography>
+            </Link>
+          </Box>
+        </Grid>
 
-      {/* Section 1 */}
+        <Grid item size={6}>
+          <Box
+            sx={{
+              backgroundColor: "rgba(10, 10, 39, 0.25)",
+              backdropFilter: "blur(4px)",
+              color: "wheat",
+              flexDirection: "column",
+              gap: 2,
+              padding: { xs: "5%", md: "10%" },
+            }}
+          >
+            <Typography variant="h6" color="gray">
+              {t("mission")}
+            </Typography>
+            <Typography variant="body1" mb={2}>
+              {t("missionp")}
+            </Typography>
+
+            <Typography variant="h6" color="gray">
+              {t("Innovation")}
+            </Typography>
+            <Typography variant="body1" mb={2}>
+              {t("Innovationp")}
+            </Typography>
+
+            <Typography variant="h6" color="gray">
+              {t("Efficiency")}
+            </Typography>
+            <Typography variant="body1">{t("Efficiencyp")}</Typography>
+          </Box>
+        </Grid>
+      </Grid>
+
       <Box
         sx={{
-          padding: "10%",
-          backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto22.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "50vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
+          width: "100%",
+          height: "1px",
+          backgroundColor: "#c5c5c5dc",
+          mt: 6,
         }}
-      >
-        <Typography variant="h2" color="white" mb={4}>
-         Vizyon & Misyon & Degerleri 
-        </Typography>
-        
-        <Grid container spacing={16}>
-          <Grid size={6}>  <Box
-          sx={{     
-            backgroundColor: "rgba(10, 10, 39, 0.25)",
-            backdropFilter: "blur(4px)",
-            color: "wheat",
-            flexDirection: "column",
-            gap: 2,
-            zIndex: 900,
-            padding: "5%",
-          }}
-        >
-          <Typography variant="h6" color="gray">
-            {t("vision")}
-          </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("visionp")}</Typography>
-                
-                       <Typography variant="h6" color="gray">
-            {t("Reliability")}
-          </Typography>
-                 <Typography variant="h6" >{t("Reliabilityp")}</Typography>   
-                        <Typography variant="h6" color="gray">
-            {t("Career")}
-          </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Careerp")}</Typography>
-                 <div style={{ background: "white", width: "150px", height: "0.5px", marginTop: "20px" }}></div>
-          <Link to="/Skills" style={{ textDecoration: "none", color: "wheat" }}>
-            <Typography
-              variant="h6"
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                cursor: "pointer",
-                gap: 1,
-                mt: 2,
-                "&:hover .arrow": { transform: "translateY(-3px)", color: "white" },
-                "&:hover": { color: "white" },
-              }}
-            >
-              iletisim
-              <ArrowForwardIcon
-                className="arrow"
-                sx={{ transition: "transform 0.3s ease" }}
-              />
-            </Typography>
-          </Link>     
-        </Box>
-        </Grid>
-           <Grid size={6}>  <Box
-          sx={{
-            backgroundColor: "rgba(10, 10, 39, 0.25)",
-            backdropFilter: "blur(4px)",
-            color: "wheat",
-            flexDirection: "column",
-            gap: 2,
-            zIndex: 900,
-            padding: "5%",
-          }}
-        >
-          <Typography variant="h6" color="gray">
-            {t("mission")}
-          </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("missionp")}</Typography>
-               <Typography variant="h6" color="gray">
-            {t("Innovation")}
-          </Typography>
-                 <Typography variant="h6" >{t("Innovationp")}</Typography>  
-                        <Typography variant="h6" color="gray">
-            {t("Efficiency")}
-          </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Efficiencyp")}</Typography> 
-        </Box>
-        </Grid>
-         
-
-        </Grid>
-       
-       
-       
-        <Box
-          sx={{
-            width: "100%",
-            height: "1px",
-            backgroundColor: "#c5c5c5dc",
-            marginTop: 12,
-            borderRadius: "2px",
-          }}
-        />
-      </Box>
-
-      
-<div className="container" data-aos="fade-up" style={{ padding:"50px" ,backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto20.jpg")',}}>
-
+      />
+    </Box>
+    {/* Gallery Section */}
+    <Box
+      sx={{
+        p: { xs: 2, md: 6 },
+        backgroundImage:
+          'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto20.jpg")',
+      }}
+    >
       <PhotoProvider maskOpacity={0.9}>
         <Swiper
           modules={[Autoplay, Pagination]}
-          loop={true}
-          speed={600}
-          autoplay={{ delay: 5000 }}
-          slidesPerView="auto"
-          slidesPerGroup={4}
-          centeredSlides={true}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            320: { slidesPerView: 1, spaceBetween: 0 },
-            768: { slidesPerView: 3, spaceBetween: 20 },
-            1200: { slidesPerView: 5, spaceBetween: 20 },
-          }}
+  loop
+  speed={600}
+  autoplay={{ delay: 5000 }}
+  
+  pagination={{ clickable: true }}
+
+  breakpoints={{
+     0:   { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 10 },  // أصغر من 320
+  320: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 20 },  // من 320px
+    768: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
+    1200: { slidesPerView: 5, slidesPerGroup: 4, spaceBetween: 20 }, // خليها 5
+  }}
         >
           {images.map((src, index) => (
             <SwiperSlide key={index}>
               <PhotoView src={src}>
                 <Box
-                 component="img"
-                src={src}
-                 alt={`gallery-${index}`}
+                  component="img"
+                  src={src}
+                  alt={`gallery-${index}`}
                   sx={{
                     width: "100%",
-                    height: "400px",
+                    height: { xs: 300, sm: 400, md: 500 },
                     objectFit: "cover",
                     borderRadius: "8px",
                     cursor: "pointer",
                     opacity: 0.9,
-                    transition: "transform 0.3s ease, opacity 0.3s ease",'&:hover': {
-                        transform: 'scale(1.05)',
-                        opacity: 0.5,
-                      },
+                    transition: "transform 0.3s ease, opacity 0.3s ease",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      opacity: 0.5,
+                    },
                   }}
-                   
                 />
               </PhotoView>
             </SwiperSlide>
           ))}
         </Swiper>
       </PhotoProvider>
-    </div>
-      {/* Section 2: Image + Stats */}
-      <Box
-        sx={{
-          padding: "5%",
-            backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto24.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          
-        }}
-      >
-        <Grid container spacing={2}>
-          <Grid item md={6} xs={12}>
-            <Box
-              component="img"
-              src="foto14.jpg"
-              alt="MyCity Building"
-              sx={{
-                width: { md: "500px", sm: "100%", xs: "100%" },
-                height: { md: "700px", sm: "auto", xs: "auto" },
-                objectFit: "cover",
-                 borderTopRightRadius:"150px"
-              }}
-            />
-          </Grid>
-          <Grid item md={6} xs={12}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
-              }}
-            >
-              {data.map((item, i) => (
-                <ButtonBase
-                  key={i}
-                  sx={{
-                    flex: 1,
-                    backdropFilter: "blur(4px)",
-                    color: "#fbe8d3",
-                    padding: "30px 80px",
-                    textAlign: "center",
-                    flexDirection: "column",
-                    borderRight: i !== data.length - 1 ? { md: "1px solid gray", xs: "none" } : "none",
-                    borderBottom: i !== data.length - 1 ? { xs: "1px solid gray", md: "none" } : "none",
-                    "&:hover": {
-                      backgroundColor: "#151515",
-                      borderLeft: "4px solid wheat",
-                    },
-                    transition: "0.3s",
-                    display: "flex",
-                  }}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{ fontWeight: "bold", fontSize: "2.5rem", mb: 1 }}
-                  >
-                    {item.number}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: "gray" }}>
-                    {item.text}
-                  </Typography>
-                </ButtonBase>
-              ))}
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* Section 3 */}
-      <Box
-        sx={{
-          backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto8.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100%',
-          padding:"60px 0px",
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <Box
-          sx={{
-            borderTopLeftRadius: "35%",
-            marginLeft: "18%",
-            backgroundColor: "rgba(10, 10, 39, 0.25)",
-            backdropFilter: "blur(4px)",
-            color: "wheat",
-            width: "550px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            zIndex: 900,
-            padding: "5%",
-          }}
-        >
-          <Typography variant="h6" color="gray" marginLeft="10%">
-            {t("Policy")}
-          </Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("ensure")}</Typography>
-                  <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("take")}</Typography>
-                 <Typography variant="h6" style={{ marginBottom: "1rem"}}>{t("Benefit")}</Typography>
-
-                 <Typography variant="h6" >{t("reflect")}</Typography>
-
-          <div style={{ background: "white", width: "150px", height: "0.5px", marginTop: "50px" }}></div>
-          <Link to="/Skills" style={{ textDecoration: "none", color: "wheat" }}>
-            <Typography
-              variant="h6"
-              sx={{
-                display: "inline-flex",
-                alignItems: "center",
-                cursor: "pointer",
-                gap: 1,
-                mt: 2,
-                "&:hover .arrow": { transform: "translateY(-3px)", color: "white" },
-                "&:hover": { color: "white" },
-              }}
-            >
-              KURUMSAL
-              <ArrowForwardIcon
-                className="arrow"
-                sx={{ transition: "transform 0.3s ease" }}
-              />
-            </Typography>
-          </Link>
-        </Box>
-      </Box>
-<Footer/>
     </Box>
-    
-  );
+    {/* Section 2: Image + Stats */}
+    <Box
+      sx={{
+        p: { xs: 2, md: "5%" },
+        backgroundImage:
+          'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto24.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12} md={6}>
+          <Box
+            component="img"
+            src="foto14.jpg"
+            alt="MyCity Building"
+            sx={{
+              width: { xs: "100%", md: "500px" },
+              height: { xs: "auto", sm: 400, md: 700 },
+              objectFit: "cover",
+              borderTopRightRadius: { xs: "50px", md: "150px" },
+            }}
+          />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
+            {data.map((item, i) => (
+              <ButtonBase
+                key={i}
+                sx={{
+                  flex: 1,
+                  backdropFilter: "blur(4px)",
+                  color: "#fbe8d3",
+                  p: { xs: "20px", md: "30px 80px" },
+                  textAlign: "center",
+                  flexDirection: "column",
+                  borderRight: i !== data.length - 1 ? { md: "1px solid gray", xs: "none" } : "none",
+                  borderBottom: i !== data.length - 1 ? { xs: "1px solid gray", md: "none" } : "none",
+                  "&:hover": {
+                    backgroundColor: "#151515",
+                    borderLeft: "4px solid wheat",
+                  },
+                  transition: "0.3s",
+                }}
+              >
+                <Typography
+                  variant="h4"
+                  sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", md: "2.5rem" }, mb: 1 }}
+                >
+                  {item.number}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "gray" }}>
+                  {item.text}
+                </Typography>
+              </ButtonBase>
+            ))}
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+
+    {/* Section 3 */}
+    <Box
+      sx={{
+        backgroundImage:
+          'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto8.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        p: { xs: 4, md: 8 },
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          borderTopLeftRadius: { xs: "20%", md: "35%" },
+          width: { xs: "100%", md: "550px" },
+          backgroundColor: "rgba(10, 10, 39, 0.25)",
+          backdropFilter: "blur(4px)",
+          color: "wheat",
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          p: { xs: "5%", md: "5%" },
+        }}
+      >
+        <Typography variant="h6" color="gray">
+          {t("Policy")}
+        </Typography>
+        <Typography variant="body1" mb={2}>
+          {t("ensure")}
+        </Typography>
+        <Typography variant="body1" mb={2}>
+          {t("take")}
+        </Typography>
+        <Typography variant="body1" mb={2}>
+          {t("Benefit")}
+        </Typography>
+        <Typography variant="body1">{t("reflect")}</Typography>
+
+        <Box sx={{ background: "white", width: "150px", height: "0.5px", mt: 4 }} />
+        <Link to="/Skills" style={{ textDecoration: "none", color: "wheat" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              cursor: "pointer",
+              gap: 1,
+              mt: 2,
+              "&:hover .arrow": { transform: "translateY(-3px)", color: "white" },
+              "&:hover": { color: "white" },
+            }}
+          >
+          
+          {t("about")}
+      
+            <ArrowForwardIcon
+              className="arrow"
+              sx={{ transition: "transform 0.3s ease" }}
+            />
+          </Typography>
+        </Link>
+      </Box>
+    </Box>
+
+    <Footer />
+  </Box>
+);
+
+
 }

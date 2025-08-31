@@ -5,6 +5,12 @@ import { useTranslation } from "react-i18next";
 
 export default  function Skills(){
   const { t } = useTranslation();
+   const data = [
+    { number: t("production.item1.number"), text: t("production.item1.text") },
+    { number: t("production.item2.number"), text: t("production.item2.text") },
+    { number: t("production.item3.number"), text: t("production.item3.text") },
+    { number: t("production.item4.number"), text: t("production.item4.text") },
+  ];
     return(
         <>
         <Box sx={{width: "100%", 
@@ -31,7 +37,7 @@ export default  function Skills(){
              <Box justifyContent={"center"}display={"flex"}>
       <img
         src="yvonne.png"
-        width={"500px"}
+        width={"250px"}
         alt=""
    
       /> 
@@ -39,7 +45,7 @@ export default  function Skills(){
         
                
               </Box>
-   <Box textAlign={"left"} paddingLeft={"25%"} marginTop={"6%"}>
+   <Box textAlign={"left"} paddingLeft={"25%"} marginTop={"2%"}>
      <Typography variant='body2' color='gray'>
 Yvonne</Typography>
           <Typography variant='h4'>{t("AboutUs")}</Typography>
@@ -50,11 +56,16 @@ Yvonne</Typography>
     md:"20%",
    xs:"15%",
    }
-} } marginTop={"2%"}>
-  <Grid item size={6}  sx={{ textAlign: "left",width:"45%" }}>
+} } marginTop={"2%"}> 
+<Grid item size={6}  alignItems={{ md: "flex-start" }} sx={{width:{sm:"100%",md:"50%",xs:"100%"}}}>
+  <Box  display="flex"
+        flexDirection="column"
+       >
         <Typography variant="h6" style={{ marginBottom: "2rem"}}>{t("AboutUsP")}</Typography>
-  </Grid>
- <Grid sm={6} md={6} xs={12}>
+  </Box>
+    </Grid>
+
+     <Grid sm={6} md={6} xs={12}>
         <Box
             component="img"
             src= "foto14.jpg"
@@ -74,7 +85,6 @@ Yvonne</Typography>
               objectFit:{md:"contain",sm:"cover"},
             }}
           />  
-    
  </Grid>
    </Grid>
         
@@ -93,203 +103,294 @@ Yvonne</Typography>
         gap: { xs: 4, md: 5 },
       }}
     >
-      <Box
-        component="li"
-        sx={{
-          textAlign: "center",
-          alignSelf: { xs: "flex-end", md: "center" },
-          mx: { md: 2 },
-        }}
-      >
-        <Typography fontSize={{xs:"40px",md:"60px"}}>1M</Typography>
-        <Typography variant="body2" color="gray">Her yıl 1 milyon triko</Typography>
-      </Box>
+ <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
+            {data.map((item, i) => (
+              <Typography
+                key={i} 
+                sx={{
+                  flex: 1,
+                 
+                  backdropFilter: "blur(4px)",
+                  color: "#fbe8d3",
+                  p: { xs: "20px", md: "30px 80px" },
+                  textAlign: "center",
+                  flexDirection: "column",
+                  borderRight: i !== data.length - 1 ? { md: "1px solid gray", xs: "none" } : "none",
+                  borderBottom: i !== data.length - 1 ? { xs: "1px solid gray", md: "none" } : "none",
+                  "&:hover": {
+                    backgroundColor: "#151515",
+                    borderLeft: "4px solid wheat",
+                  },
+                  transition: "0.3s",
+                }}
+              >
+                <Typography
+                  variant="h4"
+                  sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", md: "2.5rem" }, mb: 1 }}
+                >
+                  {item.number}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "gray" }}>
+                  {item.text}
+                </Typography>
+              </Typography>
+            ))}
+          </Box>
     
-      <Box
-        component="li"
-        sx={{
-          textAlign: "center",
-          alignSelf: { xs: "center", md: "center" },
-          mx: { md: 2 },
-        }}
-      >
-        <Typography fontSize={{xs:"40px",md:"60px"}}>750bin</Typography>
-        <Typography variant="body2" color="gray">Her yıl 750bin Jersey</Typography>
-      </Box>
-      <Box
-        sx={{
-          display: { xs: "none", md: "block" },
-          borderLeft: "2px solid gray",
-          height: "80px",
-          mx: 2,
-        }}
-      />
-      <Box
-        component="li"
-        sx={{
-          textAlign: "center",
-          alignSelf: { xs: "flex-start", md: "center" },
-          mx: { md: 2 },
-        }}
-      >
-        <Typography fontSize={{xs:"40px",md:"60px"}}>750bin</Typography>
-        <Typography variant="body2" color="gray">Her yıl 750bin dokuma giyim kumaşı</Typography>
-      </Box>
+     
+     
+      
     </Box>
     <hr style={{color:"gray",margin:"8% 0"}} />
 
+   
     <Box>
-        <Grid spacing={2}>
-             <Box style={{display:"flex",padding:"40px 0px",justifyContent:"space-around",backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto20.jpg")',}}>
-            <Grid size={6}  sx={{width:"35%",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"start"}}>
-                <Typography variant='h5' style={{marginLeft:"25%",marginBottom:"20px"}}>      
-      {t("Design")}</Typography>
-                <Typography  sx={{whiteSpace: "pre-line",}}style={{marginLeft:"25%",color:"gray"}}>
-                   {t("DesignP")}
-                  </Typography>
-            </Grid>
-         
-               <Grid md={6} xs={12} sm={12}> 
-            <Box
-            component="img"
-            src="foto20.jpg"
-            alt="MyCity Building"
-            sx={{
-             width: {md:"600px",
-                sm:"200px",
-                xs:"450px"
-              },
-              height: {md:"800px",
-                sm:"330px",
-                xs:"550px"
-              },
-              alignItems:"center",
-              borderTopLeftRadius: "30rem",
-              borderTopRightRadius:"30rem",
-              objectFit:"cover",
-            }}
-          /> 
-           </Grid>
-            </Box>
-             
-<Box style={{display:"flex",padding:"40px 0px",justifyContent:"space-around",backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto5.jpg")',}}>
-  <Grid md={6} xs={12} sm={12}> 
-            <Box
-            component="img"
-            src="foto15.jpg"
-            alt="MyCity Building"
-            sx={{
-             width: {md:"600px",
-                sm:"200px",
-                xs:"450px"
-              },
-              height: {md:"800px",
-                sm:"330px",
-                xs:"550px"
-              },
-          marginLeft:"8rem",
-              borderTopLeftRadius: "30rem",
-              borderTopRightRadius:"30rem",
-              objectFit:"cover",
-            }}
-          /> 
-           </Grid>
-              <Grid size={6} sx={{width:"25%",display:"flex",justifyContent:"center",flexDirection:"column"}}>
-                <Typography variant='h5' style={{marginLeft:"25%",marginBottom:"20px"}}>{t("Cutting")}</Typography>
-                <Typography  sx={{whiteSpace: "pre-line",}}style={{marginLeft:"25%",color:"gray"}}>{t("CuttingP")}  </Typography>
-            </Grid>
+  {/* Design */}
+  <Grid
+    container
+    spacing={2}
+    alignItems="center"
+    sx={{
+      py: "40px",
+      px: { xs: 2, md: 0 },
+      justifyContent: "space-around",
+      backgroundImage:
+        'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto20.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* النص */}
+    <Grid item size={6} order={{ xs: 2, md: 1 }}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems={{ xs: "center", md: "flex-start" }}
+        sx={{ ml: { md: "25%" } }}  // نفس الهامش اللي كان عندك
+      >
+        <Typography variant="h5" sx={{ mb: "20px", textAlign: { xs: "center", md: "left" } }}>
+          {t("Design")}
+        </Typography>
+        <Typography sx={{ whiteSpace: "pre-line", color: "gray", textAlign: { xs: "center", md: "left" } }}>
+          {t("DesignP")}
+        </Typography>
+      </Box>
+    </Grid>
+
+    {/* الصورة */}
+    <Grid item xs={12} md={6} textAlign="center" order={{ xs: 1, md: 2 }}>
+      <Box
+        component="img"
+        src="foto20.jpg"
+        alt="MyCity Building"
+        sx={{
+          width: { xs: "100%", sm: "80%", md: "600px" },
+          height: { xs: "auto", md: "800px" },
+          borderTopLeftRadius: "30rem",
+          borderTopRightRadius: "30rem",
+          objectFit: "cover",
+        }}
+      />
+    </Grid>
+  </Grid>
+
+  {/* Cutting */}
+  <Grid
+    container
+    spacing={2}
+    alignItems="center"
+    sx={{
+      py: "40px",
+      px: { xs: 2, md: 0 },
+      justifyContent: "space-around",
+      backgroundImage:
+        'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto5.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* الصورة (يسار على الشاشات الكبيرة) */}
+    <Grid item xs={12} md={6} textAlign="center" order={{ xs: 2, md: 1 }}>
+      <Box
+        component="img"
+        src="foto15.jpg"
+        alt="MyCity Building"
+        sx={{
+          width: { xs: "100%", sm: "80%", md: "600px" },
+          height: { xs: "auto", md: "800px" },
+          ml: { md: "8rem" }, // نفس الـ marginLeft اللي عندك
+          borderTopLeftRadius: "30rem",
+          borderTopRightRadius: "30rem",
+          objectFit: "cover",
+        }}
+      />
+    </Grid>
+
+    {/* النص (يمين على الكبيرة) */}
+    <Grid item size={6} order={{ xs: 1, md: 2 }}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems={{ xs: "center", md: "flex-start" }}
+        sx={{ ml: { md: "25%" } }}
+      >
+        <Typography variant="h5" sx={{ mb: "20px", textAlign: { xs: "center", md: "left" } }}>
+          {t("Cutting")}
+        </Typography>
+        <Typography sx={{ whiteSpace: "pre-line", color: "gray", textAlign: { xs: "center", md: "left" } }}>
+          {t("CuttingP")}
+        </Typography>
+      </Box>
+    </Grid>
+  </Grid>
+
+  {/* Quality */}
+  <Grid
+    container
+    spacing={2}
+    alignItems="center"
+    sx={{
+      py: "40px",
+      px: { xs: 2, md: 0 },
+      justifyContent: "space-around",
+      backgroundImage:
+        'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto24.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* النص */}
+    <Grid item size={6} order={{ xs: 2, md: 1 }}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems={{ xs: "center", md: "flex-start" }}
+        sx={{ ml: { md: "25%" } }}
+      >
+        <Typography variant="h5" sx={{ mb: "20px", textAlign: { xs: "center", md: "left" } }}>
+          {t("Quality")}
+        </Typography>
+        <Typography sx={{ whiteSpace: "pre-line", color: "gray", textAlign: { xs: "center", md: "left" } }}>
+          {t("QualityP")}
+        </Typography>
+      </Box>
+    </Grid>
+
+    {/* الصورة */}
+    <Grid item xs={12} md={6} textAlign="center" order={{ xs: 1, md: 2 }}>
+      <Box
+        component="img"
+        src="foto24.jpg"
+        alt="MyCity Building"
+        sx={{
+          width: { xs: "100%", sm: "80%", md: "600px" },
+          height: { xs: "auto", md: "800px" },
+          borderTopLeftRadius: "30rem",
+          borderTopRightRadius: "30rem",
+          objectFit: "cover",
+        }}
+      />
+    </Grid>
+  </Grid>
+
+  {/* Iron */}
+  <Grid
+    container
+    spacing={2}
+    alignItems="center"
+    sx={{
+      py: "40px",
+      px: { xs: 2, md: 0 },
+      justifyContent: "space-around",
+      backgroundImage:
+        'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto2.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* الصورة (يسار على الكبيرة) */}
+    <Grid item xs={12} md={6} textAlign="center" order={{ xs: 2, md: 1 }}>
+      <Box
+        component="img"
+        src="foto1.jpg"
+        alt="MyCity Building"
+        sx={{
+          width: { xs: "100%", sm: "80%", md: "600px" },
+          height: { xs: "auto", md: "800px" },
+          ml: { md: "8rem" },
+          borderTopLeftRadius: "30rem",
+          borderTopRightRadius: "30rem",
+          objectFit: "cover",
+        }}
+      />
+    </Grid>
+
+    {/* النص (يمين على الكبيرة) */}
+    <Grid item size={6} order={{ xs: 1, md: 2 }}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems={{ xs: "center", md: "flex-start" }}
+        sx={{ ml: { md: "25%" } }}
+      >
+        <Typography variant="h5" sx={{ mb: "20px", textAlign: { xs: "center", md: "left" } }}>
+          {t("Iron")}
+        </Typography>
+        <Typography sx={{ whiteSpace: "pre-line", color: "gray", textAlign: { xs: "center", md: "left" } }}>
+          {t("IronP")}
+        </Typography>
+      </Box>
+    </Grid>
+  </Grid>
+
+  {/* Barcoding */}
+  <Grid
+    container
+    spacing={2}
+    alignItems="center"
+    sx={{
+      py: "40px",
+      px: { xs: 2, md: 0 },
+      justifyContent: "space-around",
+      backgroundImage:
+        'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto23.jpg")',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+  
+    <Grid item size={6} order={{ xs: 1, md: 1 }}>
+      <Box display="flex" flexDirection="column" alignItems={{ xs: "center", md: "flex-start" }}>
+        <Typography variant="h5" sx={{ mb: "20px", textAlign: { xs: "center", md: "left" } }}>
+          {t("Barcoding")}
+        </Typography>
+        <Typography sx={{ whiteSpace: "pre-line", color: "gray", textAlign: { xs: "center", md: "left" } }}>
+          {t("BarcodingP")}
+        </Typography>
+      </Box>
+    </Grid>
+
+    {/* الصورة */}
+    <Grid item xs={12} md={6} textAlign="center" order={{ xs: 2, md: 2 }}>
+      <Box
+        component="img"
+        src="foto22.jpg"
+        alt="MyCity Building"
+        sx={{
+          width: { xs: "100%", sm: "80%", md: "600px" },
+          height: { xs: "auto", md: "800px" },
+          borderTopLeftRadius: "30rem",
+          borderTopRightRadius: "30rem",
+          objectFit: "cover",
+        }}
+      />
+    </Grid>
+  </Grid>
 </Box>
-             <Box style={{display:"flex",padding:"40px 0px",justifyContent:"space-around",backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto24.jpg")',}}>
-                <Grid size={6}  sx={{width:"35%",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"start"}}>
-  <Typography variant='h5' style={{marginLeft:"25%",marginBottom:"20px"}}>{t("Quality")}</Typography>
-                <Typography  sx={{whiteSpace: "pre-line",}}style={{marginLeft:"25%",color:"gray"}}>{t("QualityP")}  </Typography>
-            </Grid>
-              <Grid md={6} xs={12} sm={12}> 
-            <Box
-            component="img"
-            src=  "foto24.jpg"
-            alt="MyCity Building"
-            sx={{
-             width: {md:"600px",
-                sm:"200px",
-                xs:"450px"
-              },
-              height: {md:"800px",
-                sm:"330px",
-                xs:"550px"
-              },
-              alignItems:"center",
-              borderTopLeftRadius: "30rem",
-              borderTopRightRadius:"30rem",
-              objectFit:"cover",
-            }}
-          /> 
-           </Grid>
-             </Box>
-                           
-<Box style={{display:"flex",padding:"40px 0px",justifyContent:"space-around",backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto2.jpg")',}}>
-  <Grid md={6} xs={12} sm={12}> 
-            <Box
-            component="img"
-            src="foto1.jpg"
-            alt="MyCity Building"
-            sx={{
-             width: {md:"600px",
-                sm:"200px",
-                xs:"450px"
-              },
-              height: {md:"800px",
-                sm:"330px",
-                xs:"550px"
-              },
-          marginLeft:"8rem",
-              borderTopLeftRadius: "30rem",
-              borderTopRightRadius:"30rem",
-              objectFit:"cover",
-            }}
-          /> 
-           </Grid>
-              <Grid size={6} sx={{width:"25%",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"start"}}>
-          <Typography variant='h5' style={{marginLeft:"25%",marginBottom:"20px"}}>{t("Iron")}</Typography>
-                <Typography  sx={{whiteSpace: "pre-line",}}style={{marginLeft:"25%",color:"gray"}}>{t("IronP")}  </Typography>
-            </Grid>
-</Box>
-             <Box style={{display:"flex",padding:"40px 0px",justifyContent:"space-around",backgroundImage:
-            'linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("foto23.jpg")',}}>
-                <Grid size={6}  sx={{width:"25%",display:"flex",justifyContent:"center",flexDirection:"column",alignItems:"start"}}>
-             <Typography variant='h5' style={{marginLeft:"25%",marginBottom:"20px"}}>{t("Barcoding")}</Typography>
-                <Typography  sx={{whiteSpace: "pre-line",}}style={{marginLeft:"25%",color:"gray"}}>{t("BarcodingP")}  </Typography>
-            </Grid>
-              <Grid md={6} xs={12} sm={12}> 
-            <Box
-            component="img"
-            src=  "foto22.jpg"
-            alt="MyCity Building"
-            sx={{
-             width: {md:"600px",
-                sm:"200px",
-                xs:"450px"
-              },
-              height: {md:"800px",
-                sm:"330px",
-                xs:"550px"
-              },
-              alignItems:"center",
-              borderTopLeftRadius: "30rem",
-              borderTopRightRadius:"30rem",
-              objectFit:"cover",
-            }}
-          /> 
-           </Grid>
-             </Box> 
-        </Grid>
-    </Box>
+
         </Box>
         
         </>
     )
 }
+

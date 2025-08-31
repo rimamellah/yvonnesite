@@ -17,27 +17,13 @@ function Projet() {
     <Box
       sx={{
         width: "100%",
-        paddingTop: "200px",
+        paddingTop: "100px",
         position: "relative",
         bgcolor: 'rgba(0, 0, 0, 0.95)',
         color: "wheat",
       }}
     >
        
-             <Box m={"0px 2%"}>
-                               <img
-        src="yvonne.png"
-        width={"200px"}
-
-        alt=""
-   
-      /> 
-             
-        
-               
-              </Box>
-      <Typography sx={{ marginLeft: "10%" }} variant='h2'>Ürün Grupları</Typography>
-
       <PhotoProvider maskOpacity={0.9}>
         {pattern.map((count, rowIndex) => {
           const rowImages = allImages.slice(startIndex, startIndex + count);
@@ -60,7 +46,7 @@ function Projet() {
                     alt=""
                     sx={{
                       width: '100%',
-                      height: '450px',
+                      height: '350px',
                       objectFit:'cover',
                       cursor: 'pointer',
                       borderRadius: '8px',
