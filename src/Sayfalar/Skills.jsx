@@ -73,7 +73,7 @@ Yvonne</Typography>
             sx={{
              width: {md:"300px",
                 sm:"200px",
-                xs:"400px"
+                xs:"300px"
               },
               height: {md:"400px",
                 sm:"330px",
