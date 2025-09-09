@@ -52,7 +52,7 @@ As:"Yvonne Fae olarak dünyanın dört bir yanına ürün gönderimi yapıyoruz.
     "projects": "ÜRÜN GRUPLARI",
     "contact": "İLETİŞİM"
   },
-  about:"hakımızda",
+  about:"hakkımızda",
   contact:"iletişim",
 production: {
     "item1": {
@@ -60,11 +60,11 @@ production: {
       "text": "2000 metrekare üretim alanı"
     },
     "item2": {
-      "number": "500 kutu",
+      "number": "500 bin",
       "text": "Yıllık 500 bin Denim üretimi"
     },
     "item3": {
-      "number": "500 kutu",
+      "number": "500 bin",
       "text": "Yıllık 500 bin dokuma örme"
     },
     "item4": {

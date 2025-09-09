@@ -87,9 +87,18 @@ return (
         
       }}
     >
-      <Typography variant="h3" color="white" mb={2} textAlign="center">
-         {t("vsms")}
-      </Typography>
+     <Typography
+  variant="h2"
+  color="white"
+  mb={2}
+  textAlign="center"
+  sx={{
+    fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" }
+  }}
+>
+  {t("vsms")}
+</Typography>
+
 
       <Grid container spacing={4} mt={2}>
         <Grid item size={6}>
